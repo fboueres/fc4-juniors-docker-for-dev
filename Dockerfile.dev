@@ -3,3 +3,13 @@ FROM node:22.8.0-slim
 RUN apt update && \
     apt install -y curl && \
     npm install -g nodemon
+
+# for Debian
+#RUN useradd -m -u 1000 xpto
+#RUN usermod -u 1000 xpto
+
+#for Alpine
+#RUN useradd -D -u 1000 xpto
+#RUN sed -i 's/1000/1001/g' /etc/passwd
+    
+USER node
